@@ -1,0 +1,81 @@
+{% extends 'products/base.html' %}
+{% load static %}
+{% block title %}Iniciar sesión{% endblock %}
+{% block header %}
+    <header>
+    <div class="menu">
+      <div class="contenedor">
+        <div id="introduccion">
+          <p class="blanco"><span>Venta Oficial</span> de la marca Saphirus®</p>
+          <p class="blanco">Aromatización ambiental</p>
+          <p class="blanco">Contamos con toda la linea de productos.</p>
+        </div>
+        <div id="imagen">
+          <img id="logo-login" src={% static "products/imagenes/logo.jpeg" %}>
+        </div>
+        <div>
+          <img id="saphirus" src= {% static 'products/imagenes/saphirus.jpeg' %}>
+        </div>
+      </div>
+    </div>
+  
+  {% block content %}
+    <style>.errorlist{color:red;}</style>
+    <main role="main">
+      <div class="container">
+        <div class="row mt-3">
+          <div class="col-md-9 mx-auto mb-5">
+            {% if 'register' in request.GET %}
+              <p style="color:green;">Usuario registrado correctamente, ya puedes identificarte.</p>
+            {% endif %}
+            <form action="" method="post">{% csrf_token %}
+              <h3  class="mb-4 blanco">Iniciar sesión</h3>
+              {% if form.non_field_errors %}
+                <p style="color:red">Usuario o contraseña incorrectos, prueba de nuevo.</p>
+              {% endif %}
+              <p>
+                <input type="text" name="username" autofocus maxlength="254" required
+                  id="id_username" class="form-control" placeholder="Nombre de usuario"/>
+              </p>
+              <p>
+                <input type="password" name="password" required
+                  id="id_password" class="form-control" placeholder="Contraseña"/>
+              </p>
+              <p><input type="submit" class="btn btn-danger btn-block" value="Acceder"></p>
+            </form>
+            <p class="blanco">
+              ¿Ha olvidado su clave? Puede restaurarla <a class="letra-rosa" href="{% url 'password_reset' %}">aquí</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+    {% endblock %}
+    </header>
+    {% endblock %}
+    {% block footer %}
+
+    <footer>
+    <div class="contenedor">
+      <ul>
+        <li>
+          <img class="login-img" src= {% static "products/imagenes/user.png" %}>
+          <h3 class="login">Atención Personalizada</h3>
+        </li>
+        <li>
+          <img class="login-img" src= {% static "products/imagenes/carrito.png" %}>
+          <h3 class="login">Pedidos Online</h3>
+        </li>
+        <li>
+          <img class="login-img" src= {% static "products/imagenes/map.png" %}>
+          <h3 class="login">Envíos a todo el país</h3>
+        </li>
+        <li> 
+          <img class="login-img" src= {% static "products/imagenes/candado.png" %}>
+          <h3 class="login">Plataforma de pago seguro</h3>
+        </li>       
+      </ul>
+    </div>
+  </footer>
+
+  {% endblock %}

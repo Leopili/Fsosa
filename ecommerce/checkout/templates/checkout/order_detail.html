@@ -1,0 +1,84 @@
+{% extends 'products/base.html' %}
+{% load static %}
+{% block title %}Inicio{% endblock %}
+{% block header %}
+    <header id="carrito">
+    <div class="menu">
+      <div class="contenedor">
+        <div id="introduccion">
+          <p class="blanco"><span>Venta Oficial</span> de la marca Saphirus®</p>
+          <p class="blanco">Aromatización ambiental</p>
+          <p class="blanco">Contamos con toda la linea de productos.</p>
+        </div>
+        <div id="imagen">
+          <a href= "{% url 'mainapp:home' %}"><img id="logo-login" src={% static "products/imagenes/logo.jpeg" %}></a>
+        </div>
+        <div>
+          <img id="saphirus" src= {% static 'products/imagenes/saphirus.jpeg' %}>
+        </div>
+      </div>
+    </div>
+
+{% block content %}
+<div class="container">
+<div>
+	<h2 class="blanco catalogo">Detalle</h2>
+</div >
+<table class="table-responsive">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Producto</th>
+      <th scope="col">Cant.</th>
+      <th scope="col">Monto</th>
+    </tr>
+  </thead>
+  <tbody>
+  	{% for cart in carts %}
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td>{{ cart.item.name }}</td>
+      <td>
+        <span>{{ cart.quantity }}</span>
+      </td>
+      <td>${{ cart.get_total }}</td>
+    </tr>
+	{% endfor %}
+    <tr>
+      <th scope="row"></th> 
+      <td colspan="2">Total</td>
+      <td>${{ order.get_totals| floatformat:2 }}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+{% endblock %}
+</header>
+{% endblock %}
+{% block footer %}
+
+  <footer id="footercarrito">
+  <div class="contenedor">
+    <ul>
+      <li>
+        <img class="login-img" src= {% static "products/imagenes/user.png" %}>
+        <h3 class="login">Atención Personalizada</h3>
+      </li>
+      <li>
+        <img class="login-img" src= {% static "products/imagenes/carrito.png" %}>
+        <h3 class="login">Pedidos Online</h3>
+      </li>
+      <li>
+        <img class="login-img" src= {% static "products/imagenes/map.png" %}>
+        <h3 class="login">Envíos a todo el país</h3>
+      </li>
+      <li> 
+        <img class="login-img" src= {% static "products/imagenes/candado.png" %}>
+        <h3 class="login">Plataforma de pago seguro</h3>
+      </li>       
+    </ul>
+  </div>
+</footer>
+
+{% endblock %}

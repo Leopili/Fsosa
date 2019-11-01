@@ -1,0 +1,87 @@
+{% extends 'products/base.html' %}
+{% load static %}
+{% block title %}Inicio{% endblock %}
+{% block header %}
+    <header id="carrito">
+    <div class="menu">
+      <div class="contenedor">
+        <div id="introduccion">
+          <p class="blanco"><span>Venta Oficial</span> de la marca Saphirus®</p>
+          <p class="blanco">Aromatización ambiental</p>
+          <p class="blanco">Contamos con toda la linea de productos.</p>
+        </div>
+        <div id="imagen">
+          <a href= "{% url 'mainapp:home' %}"><img id="logo-login" src={% static "products/imagenes/logo.jpeg" %}></a>
+        </div>
+        <div>
+          <img id="saphirus" src= {% static 'products/imagenes/saphirus.jpeg' %}>
+        </div>
+      </div>
+    </div>
+{% block content %}
+
+<div class="container mt-5">
+<h2 class="text-center blanco"><strong>Listado de Pedidos</strong></h2>
+<div class="row">
+	<div class="col-md-12">
+		<div class="card mt-5" style="height: auto">
+			<div class="table-responsive">
+			<table class="table">
+			  <thead>
+			    <tr>			      
+			      <th scope="col">Pedido</th>
+			      <th scope="col">Usuario</th>
+			      <th scope="col">Estado</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    
+			    
+			    {% for order in object_list %}
+			    <tr>
+			      <th scope="row">{{ forloop.counter }}</th>
+			      <td>{{ order.user }}</td>
+			      <td><a href="{% url 'checkout:order_listar' order.user %}">Ver Pedido</a></td>
+			    </tr>
+			      {% endfor %}
+			    
+			  </tbody>
+			</table>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-12 my-5 text-center">
+		<a href="/" class="btn btn-success">INICIO</a>
+	</div>
+</div>
+</div>
+
+{% endblock %}
+</header>
+{% endblock %}
+{% block footer %}
+
+  <footer id="footercarrito">
+  <div class="contenedor">
+    <ul>
+      <li>
+        <img class="login-img" src= {% static "products/imagenes/user.png" %}>
+        <h3 class="login">Atención Personalizada</h3>
+      </li>
+      <li>
+        <img class="login-img" src= {% static "products/imagenes/carrito.png" %}>
+        <h3 class="login">Pedidos Online</h3>
+      </li>
+      <li>
+        <img class="login-img" src= {% static "products/imagenes/map.png" %}>
+        <h3 class="login">Envíos a todo el país</h3>
+      </li>
+      <li> 
+        <img class="login-img" src= {% static "products/imagenes/candado.png" %}>
+        <h3 class="login">Plataforma de pago seguro</h3>
+      </li>       
+    </ul>
+  </div>
+</footer>
+
+{% endblock %}

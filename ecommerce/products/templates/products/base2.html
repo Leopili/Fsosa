@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+  	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'products/estilos/estilo_propio.css' %}">
+	<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+	<meta charset="utf-8">
+	<title>GLUSH AROMAS | Florencia Sosa </title>
+</head>
+
+
+<body>
+
+	<header>
+		<div class="menu">
+			<div class="contenedor">
+				<div id="introduccion">
+					<p class="blanco"><span>Venta Oficial</span> de la marca Saphirus®</p>
+					<p class="blanco">Aromatización ambiental</p>
+					<p class="blanco">Contamos con toda la linea de productos.</p>
+				</div>
+				<div>
+					<img id="saphirus" src= {% static 'products/imagenes/saphirus.jpeg' %}>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="contenedor-principal">
+			<div class="contenedor-izquierda">
+				<div class="contenedor-titulo-izquierda">
+					<p class="blanco">PEDÍ CATÁLOGO</p>
+					<p class="blanco">DIGITAL AHORA!</p>
+					<p class="blanco"><span id=telefono>1124675666</span></p>
+					<a id="whatsapp" href="https://api.whatsapp.com/send?phone=5491124675666"><img id="whatsapp" src={% static "products/imagenes/whatsapp.png" %}></a>
+				</div>
+				<div>
+					<img id="saphirus2" src= {% static "products/imagenes/saphirus2.png" %}>
+				</div>
+			</div>
+			<div class="contenedor-derecha">
+				<div class="contenedor-titulo">
+					<a class="link-inicio" href="{% url 'signup' %}">REGISTRARSE</a>
+					<p class="blanco" id="cliente">Si ya sos cliente</p>
+					{% if not request.user.is_authenticated %}  
+					<a class="link-inicio" href="{% url 'login' %}">INICIAR SESIÓN</a>
+					{% else %}
+					{% if request.user.is_staff %}
+					<a class="link-inicio" href="{% url 'checkout:orderlist' %}">VER PEDIDOS</a>
+					{% else %}
+					<a class="link-inicio" href="{% url 'mainapp:home' %}">REALIZAR PEDIDO</a>
+					{% endif %}
+					{% endif %} 
+				</div>
+				<div id="imagen">
+					<img id="logo" src={% static "products/imagenes/logo.jpeg" %}>
+				</div>
+				<div class="contacto">
+					<h3 class="blanco">Contacto:</h3>
+					<div class="redes">
+						<img id="face" src= {% static "products/imagenes/facebook.png" %}>
+						<img id="ing" src= {% static "products/imagenes/ing.png" %}>
+						<img id="wp"src= {% static "products/imagenes/wp.jpg" %}>
+						<p class="blanco" id="telefono">1124675666</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<footer>
+		<div class="contenedor">
+			<ul>
+				<li>
+					<img src= {% static "products/imagenes/user.png" %}>
+					<h3>Atención Personalizada</h3>
+				</li>
+				<li>
+					<img src= {% static "products/imagenes/carrito.png" %}>
+					<h3>Pedidos Online</h3>
+				</li>
+				<li>
+					<img src= {% static "products/imagenes/map.png" %}>
+					<h3>Envíos a todo el país</h3>
+				</li>
+				<li> 
+					<img src= {% static "products/imagenes/candado.png" %}>
+					<h3>Plataforma de pago seguro</h3>
+				</li>				
+			</ul>
+		</div>
+	</footer>
+
+</body>
+</html>

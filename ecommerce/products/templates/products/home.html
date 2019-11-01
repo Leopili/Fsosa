@@ -1,0 +1,65 @@
+{% extends 'products/base.html' %}
+{% load static %}
+{% block title %}Inicio{% endblock %}
+{% block header %}
+    <header id="categorias">
+    <div class="menu">
+      <div class="contenedor">
+        <div id="introduccion">
+          <p class="blanco"><span>Venta Oficial</span> de la marca Saphirus®</p>
+          <p class="blanco">Aromatización ambiental</p>
+          <p class="blanco">Contamos con toda la linea de productos.</p>
+        </div>
+        <div id="imagen">
+          <a href= "{% url 'mainapp:home' %}"><img id="logo-login" src={% static "products/imagenes/logo.jpeg" %}></a>
+        </div>
+        <div>
+          <img id="saphirus" src= {% static 'products/imagenes/saphirus.jpeg' %}>
+        </div>
+      </div>
+    </div>
+  
+  {% block content %}
+  <div class="categorias">
+    <div class="contenedor-categorias">
+      <ul>
+        {% for cat in object_list %}
+        <li> <a href='{% url 'mainapp:category_details' pk=cat.pk %}'>{{ cat.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="imagenes-categoria">
+      <img id="saphirus3" src= {% static 'products/imagenes/saphirus.png' %}>
+    </div>
+  </div>
+
+    
+  {% endblock %}
+  </header>
+  {% endblock %}
+  {% block footer %}
+
+    <footer>
+    <div class="contenedor">
+      <ul>
+        <li>
+          <img class="login-img" src= {% static "products/imagenes/user.png" %}>
+          <h3 class="login">Atención Personalizada</h3>
+        </li>
+        <li>
+          <img class="login-img" src= {% static "products/imagenes/carrito.png" %}>
+          <h3 class="login">Pedidos Online</h3>
+        </li>
+        <li>
+          <img class="login-img" src= {% static "products/imagenes/map.png" %}>
+          <h3 class="login">Envíos a todo el país</h3>
+        </li>
+        <li> 
+          <img class="login-img" src= {% static "products/imagenes/candado.png" %}>
+          <h3 class="login">Plataforma de pago seguro</h3>
+        </li>       
+      </ul>
+    </div>
+  </footer>
+
+  {% endblock %}

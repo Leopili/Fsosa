@@ -1,0 +1,61 @@
+{% extends 'products/base.html' %}
+{% load static %}
+{% block title %}Inicio{% endblock %}
+{% block header %}
+
+<header class="final2">
+    <div class="menu">
+      <div class="contenedor">
+        <div id="introduccion">
+          <p class="blanco"><span>Venta Oficial</span> de la marca Saphirus®</p>
+          <p class="blanco">Aromatización ambiental</p>
+          <p class="blanco">Contamos con toda la linea de productos.</p>
+        </div>
+        <div id="imagen">
+          <a href= "{% url 'mainapp:home' %}"><img id="logo-login" src={% static "products/imagenes/logo.jpeg" %}></a>
+        </div>
+        <div>
+          <img id="saphirus" src= {% static 'products/imagenes/saphirus.jpeg' %}>
+        </div>
+      </div>
+    </div>
+
+{% block content %}
+
+	<div class="contenedor">
+		<div class="final">
+			<h2 class="text-center blanco">Muchas gracias por su pedido.</h2>
+			<a href= "{% url 'mainapp:home' %}" class="btn btn-success inicio">Inicio</a>
+		</div>
+	</div>
+
+{% endblock %}
+
+</header>
+  {% endblock %}
+  {% block footer %}
+
+    <footer id="final">
+    <div class="contenedor">
+      <ul>
+        <li>
+          <img class="login-img" src= {% static "products/imagenes/user.png" %}>
+          <h3 class="login">Atención Personalizada</h3>
+        </li>
+        <li>
+          <img class="login-img" src= {% static "products/imagenes/carrito.png" %}>
+          <h3 class="login">Pedidos Online</h3>
+        </li>
+        <li>
+          <img class="login-img" src= {% static "products/imagenes/map.png" %}>
+          <h3 class="login">Envíos a todo el país</h3>
+        </li>
+        <li> 
+          <img class="login-img" src= {% static "products/imagenes/candado.png" %}>
+          <h3 class="login">Plataforma de pago seguro</h3>
+        </li>       
+      </ul>
+    </div>
+  </footer>
+
+  {% endblock %}

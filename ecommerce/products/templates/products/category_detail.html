@@ -1,0 +1,81 @@
+{% extends 'products/base.html' %}
+{% load static %}
+{% block title %}Inicio{% endblock %}
+{% block header %}
+    <header id="registration3">
+    <div class="menu">
+      <div class="contenedor">
+        <div id="introduccion">
+          <p class="blanco"><span>Venta Oficial</span> de la marca Saphirus®</p>
+          <p class="blanco">Aromatización ambiental</p>
+          <p class="blanco">Contamos con toda la linea de productos.</p>
+        </div>
+        <div id="imagen">
+          <a href= "{% url 'mainapp:home' %}"><img id="logo-login" src={% static "products/imagenes/logo.jpeg" %}></a>
+        </div>
+        <div>
+          <img id="saphirus" src= {% static 'products/imagenes/saphirus.jpeg' %}>
+        </div>
+      </div>
+    </div>
+  
+  {% block content %}
+    <div class="container">
+      	<h2 class="blanco catalogo">Catálogo 2020</h2>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <td>Producto</td>
+              <td>Precio</td>
+              <td>Agregar</td>            
+            </tr>
+          </thead>
+          <tbody>
+          {% for prod in products %}
+          <tr>
+              <td>
+                <span> {{ prod.name }} </span>
+              </td>
+          	  <td>
+                <span class="price-new">${{prod.price}}</span>
+              </td>
+              <td>
+                <a href="{% url 'mainapp:cart' prod.slug %}" class="text-uppercase"><i class="fas fa-shopping-cart" id="negro"></i>
+                <span>Agregar al pedido</span></a>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table> 
+    </div>
+</div>
+ </div>
+{% endblock %}
+</header>
+  {% endblock %}
+  {% block footer %}
+
+    <footer>
+    <div class="contenedor">
+      <ul>
+        <li>
+          <img class="login-img" src= {% static "products/imagenes/user.png" %}>
+          <h3 class="login">Atención Personalizada</h3>
+        </li>
+        <li>
+          <img class="login-img" src= {% static "products/imagenes/carrito.png" %}>
+          <h3 class="login">Pedidos Online</h3>
+        </li>
+        <li>
+          <img class="login-img" src= {% static "products/imagenes/map.png" %}>
+          <h3 class="login">Envíos a todo el país</h3>
+        </li>
+        <li> 
+          <img class="login-img" src= {% static "products/imagenes/candado.png" %}>
+          <h3 class="login">Plataforma de pago seguro</h3>
+        </li>       
+      </ul>
+    </div>
+  </footer>
+
+  {% endblock %}
