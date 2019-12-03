@@ -2,7 +2,7 @@
 {% load static %}
 {% block title %}Registro{% endblock %}
 {% block header %}
-    <header id="registration">
+    <header id="registration signup">
     <div class="menu">
       <div class="contenedor">
         <div id="introduccion">
@@ -49,13 +49,13 @@
           <h3 class="login">Pedidos Online</h3>
         </li>
         <li>
-          <img class="login-img" src= {% static "products/imagenes/map.png" %}>
+          <img class="login-img" id="ubicacion" src= {% static "products/imagenes/map.png" %}>
           <h3 class="login">Envíos a todo el país</h3>
         </li>
-        <li> 
+        <li>
           <img class="login-img" src= {% static "products/imagenes/candado.png" %}>
           <h3 class="login">Plataforma de pago seguro</h3>
-        </li>       
+        </li>
       </ul>
     </div>
   </footer>
