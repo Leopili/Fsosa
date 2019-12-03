@@ -13,8 +13,34 @@ body {
 
 header {
 	background-image: url(../imagenes/fondo.jpeg);
-	height: 90vh;
+	height: auto;
+	min-height: 93vh;
 	background-size: cover;
+}
+
+#signup {
+    height: auto;
+}
+
+.carro {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+#tiendaonline {
+    margin-top: 25px;
+    font-size: 45px;
+    font-family: calibri;
+    color: #fff;
+    font-weight: 800;
+    letter-spacing: 5px;
+    margin-left: 15px;
+}
+
+#carroinicio {
+    height: 100px;
+    width: 100px;
 }
 
 #registration2 {
@@ -157,7 +183,7 @@ header .contenedor-titulo a {
 }
 
 .contacto {
-	margin-top: 20px;
+	margin: 20px 0px;
 }
 .contacto h3 {
 	padding-bottom: 10px;
@@ -229,8 +255,14 @@ footer ul li img {
     width: 40px;
 }
 
+#ubicacion {
+    height: 26px;
+    width: 26px;
+    margin-top: 8px;
+}
+
 footer h3 {
-    color: #0647f5;
+    color: black;
     font-size: 20px;
     font-weight: 800;
     margin: 0;
@@ -337,7 +369,7 @@ table {
 
 
 table a {
-	color: #c9c4c4;
+	color: #f920be;
 }
 
 table i {
@@ -345,8 +377,8 @@ table i {
 }
 
 thead {
-    background: #AEB1B4;
-	color: #f72b0e;
+    background: #f920be;
+    color: #fff;
     font-weight: 1000;
     letter-spacing: 3px;
     font-family: 'Rubik', sans-serif;
@@ -358,11 +390,13 @@ tbody {
 }
 
 tbody tr:nth-child(odd) {
-    background-color: #963292;
+    background-color: #fff;
+    color: #f920be;
 }
 
 tbody tr:nth-child(even) {
-    background-color: #ee6c22;
+    background-color: #fff;
+    color: #f920be;
 }
 
 tbody tr {
@@ -383,11 +417,19 @@ i.fas{
 }
 
 a #negro {
-	color: #ccc !important;
+	color: #f920be !important;
 }
 
 .badge-light {
 	background-color: #c6c5c5;
+}
+
+ul {
+    list-style: none;
+}
+ul.detalle {
+    margin: 0 auto;
+    width: 300px;
 }
 
 ul.detalle li {
@@ -399,22 +441,28 @@ ul.detalle li {
 }
 
 .detalle2 {
-	width: 233px;
-	margin-left: 160px;
+    width: 235px;
+    margin-left: 537px;
+    margin-top: 20px;
 }
 
 span#total {
 	font-size: 16px;
 	font-family: 'rubik' , sans-serif;
 	margin-bottom: 8px;
+	margin-left: 560px;
 }
 
+.contenedor-categorias2 {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
 
 a#confirmar {
-	float: right !important;
 	padding: 10px;
-	width: 472px;
-	margin-left: 40px !important;
+	width: 250px;
+	margin-left: 533px !important;
 	font-size: 22px;
 	color: #e30a03;
 	font-weight: 700;
@@ -427,7 +475,7 @@ a#confirmar {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	width: 30%%;
+	width: 30%;
 	margin: auto;
 	margin-top: 35px;
 }
@@ -440,17 +488,26 @@ footer#final {
 	margin: 0;
 }
 
+img#saphirus7 {
+    width: 0px;
+    height: 0px;
+}
+
 @media screen and (max-width: 480px) {
 
 header {
 	height: auto;
+	min-height: 100vh;
 }
 
 
 #saphirus {
-    height: 100px;
-    width: 100px;
+    height: 90px;
+    width: 90px;
+    margin-top: 10px;
+    border-radius: 41px;
 }
+
 
 header .contenedor-principal {
 	flex-direction: column;
@@ -537,6 +594,7 @@ footer {
 
 footer ul {
     margin-left: -35px;
+    margin-top: -15px;
 }
 
 footer ul li img {
@@ -639,6 +697,7 @@ tbody {
     text-align: center;
     margin-right: 45px;
     margin-left: 0;
+    width: 100%;
 }
 
 .categorias9 {
@@ -655,13 +714,12 @@ tbody {
 
 span#total {
     margin-bottom: 10px;
-    margin-left: 30px;
+    margin-left: 0px;
 }
 
 a#confirmar {
     width: 100%;
-    margin-right: -15px;
-    margin-top: 15px;
+    margin-left: 23px !important;
 }
 
 .blanco.detalle2.izquierda {
@@ -676,5 +734,49 @@ a#confirmar {
     margin-right: auto;
 }
 
+footer ul {
+    top: 13px;
+    left: 2px;
+}
+
+.detalle2 {
+    width: 108%;
+    margin-left: auto;
+    margin-top: 20px;
+    margin-right: auto;
+}
+
+ul.detalle {
+    margin: 20px 0px;
+    width: 100%;
+}
+
+table {
+    margin-bottom: 20px !important;
+}
+
+#ubicacion {
+    height: 18px;
+    width: 18px;
+    margin-top: 0px;
+}
+
+.carro {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0px;
+    margin-left: 20px;
+}
+
+#tiendaonline {
+    margin-top: 0px;
+    font-size: 27px;
+    margin-left: 0px;
+}
+
+#carroinicio {
+    height: 90px;
+    width: 90px;
+}
 
 }
