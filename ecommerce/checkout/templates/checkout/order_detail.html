@@ -11,7 +11,7 @@
           <p class="blanco">Contamos con toda la linea de productos.</p>
         </div>
         <div id="imagen">
-          <a href= "{% url 'mainapp:home' %}"><img id="logo-login" src={% static "products/imagenes/logo.jpeg" %}></a>
+          <a href= "{% url 'mainapp:inicio' %}"><img id="logo-login" src={% static "products/imagenes/logo.jpeg" %}></a>
         </div>
         <div>
           <img id="saphirus" src= {% static 'products/imagenes/saphirus.jpeg' %}>
@@ -45,7 +45,7 @@
     </tr>
 	{% endfor %}
     <tr>
-      <th scope="row"></th> 
+      <th scope="row"></th>
       <td colspan="2">Total</td>
       <td>${{ order.get_totals| floatformat:2 }}</td>
     </tr>
@@ -70,13 +70,13 @@
         <h3 class="login">Pedidos Online</h3>
       </li>
       <li>
-        <img class="login-img" src= {% static "products/imagenes/map.png" %}>
+        <img class="login-img" id="ubicacion" src= {% static "products/imagenes/map.png" %}>
         <h3 class="login">Envíos a todo el país</h3>
       </li>
-      <li> 
+      <li>
         <img class="login-img" src= {% static "products/imagenes/candado.png" %}>
         <h3 class="login">Plataforma de pago seguro</h3>
-      </li>       
+      </li>
     </ul>
   </div>
 </footer>
