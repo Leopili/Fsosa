@@ -22,6 +22,10 @@
 					<p class="blanco">Aromatización ambiental</p>
 					<p class="blanco">Contamos con toda la linea de productos.</p>
 				</div>
+				<div class="carro">
+				    <img id="carroinicio" src= {% static "products/imagenes/carrito.png" %}>
+				    <p id="tiendaonline">TIENDA ONLINE</p>
+				</div>
 				<div>
 					<img id="saphirus" src= {% static 'products/imagenes/saphirus.jpeg' %}>
 				</div>
@@ -45,15 +49,16 @@
 				<div class="contenedor-titulo">
 					<a class="link-inicio" href="{% url 'signup' %}">REGISTRARSE</a>
 					<p class="blanco" id="cliente">Si ya sos cliente</p>
-					{% if not request.user.is_authenticated %}  
+					{% if not request.user.is_authenticated %}
 					<a class="link-inicio" href="{% url 'login' %}">INICIAR SESIÓN</a>
 					{% else %}
 					{% if request.user.is_staff %}
 					<a class="link-inicio" href="{% url 'checkout:orderlist' %}">VER PEDIDOS</a>
 					{% else %}
 					<a class="link-inicio" href="{% url 'mainapp:home' %}">REALIZAR PEDIDO</a>
+					<a class="link-inicio" href="{% url 'logout' %}">CERRAR SESIÓN</a>
 					{% endif %}
-					{% endif %} 
+					{% endif %}
 				</div>
 				<div id="imagen">
 					<img id="logo" src={% static "products/imagenes/logo.jpeg" %}>
@@ -63,7 +68,7 @@
 					<div class="redes">
 						<img id="face" src= {% static "products/imagenes/facebook.png" %}>
 						<img id="ing" src= {% static "products/imagenes/ing.png" %}>
-						<img id="wp"src= {% static "products/imagenes/wp.jpg" %}>
+						<img id="wp"src= {% static "products/imagenes/whatsapp.png" %}>
 						<p class="blanco" id="telefono">1124675666</p>
 					</div>
 				</div>
@@ -82,13 +87,13 @@
 					<h3>Pedidos Online</h3>
 				</li>
 				<li>
-					<img src= {% static "products/imagenes/map.png" %}>
+					<img id="ubicacion" src= {% static "products/imagenes/map.png" %}>
 					<h3>Envíos a todo el país</h3>
 				</li>
-				<li> 
+				<li>
 					<img src= {% static "products/imagenes/candado.png" %}>
 					<h3>Plataforma de pago seguro</h3>
-				</li>				
+				</li>
 			</ul>
 		</div>
 	</footer>
