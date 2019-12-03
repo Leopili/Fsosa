@@ -12,7 +12,7 @@
           <p class="blanco">Contamos con toda la linea de productos.</p>
         </div>
         <div id="imagen">
-          <a href= "{% url 'mainapp:home' %}"><img id="logo-login" src={% static "products/imagenes/logo.jpeg" %}></a>
+          <a href= "{% url 'mainapp:inicio' %}"><img id="logo-login" src={% static "products/imagenes/logo.jpeg" %}></a>
         </div>
         <div>
           <img id="saphirus" src= {% static 'products/imagenes/saphirus.jpeg' %}>
@@ -24,16 +24,13 @@
 
 <div class="categorias9">
   <div class="contenedor-categorias2">
-    <h2 class="blanco detalle2 izquierda">Detalle de Pedido</h2>
+    <h2 class="blanco detalle2">Detalle de Pedido</h2>
       <ul class="detalle">
       {% for item in order_items %}
       <li>{{ item.item.name }} = {{ item.quantity }}</li>{% endfor %}
     </ul>
     <span class="blanco detalle2" id="total"><b>Total del Pedido: $ {{ order_total | floatformat:2 }}</b></span>
     <a href="{% url 'checkout:charge' %}" class="btn btn-primary float-right" id="confirmar">Confirmar Pedido</a>
-  </div>
-  <div class="imagenes-categoria">
-    <img id="saphirus3" src= {% static 'products/imagenes/saphirus.png' %}>
   </div>
 </div>
 {% endblock %}
@@ -53,13 +50,13 @@
           <h3 class="login">Pedidos Online</h3>
         </li>
         <li>
-          <img class="login-img" src= {% static "products/imagenes/map.png" %}>
+          <img class="login-img" id="ubicacion" src= {% static "products/imagenes/map.png" %}>
           <h3 class="login">Envíos a todo el país</h3>
         </li>
-        <li> 
+        <li>
           <img class="login-img" src= {% static "products/imagenes/candado.png" %}>
           <h3 class="login">Plataforma de pago seguro</h3>
-        </li>       
+        </li>
       </ul>
     </div>
   </footer>
