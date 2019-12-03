@@ -11,7 +11,7 @@
           <p class="blanco">Contamos con toda la linea de productos.</p>
         </div>
         <div id="imagen">
-          <a href= "{% url 'mainapp:home' %}"><img id="logo-login" src={% static "products/imagenes/logo.jpeg" %}></a>
+          <a href= "{% url 'mainapp:inicio' %}"><img id="logo-login" src={% static "products/imagenes/logo.jpeg" %}></a>
         </div>
         <div>
           <img id="saphirus" src= {% static 'products/imagenes/saphirus.jpeg' %}>
@@ -28,15 +28,15 @@
 			<div class="table-responsive">
 			<table class="table">
 			  <thead>
-			    <tr>			      
+			    <tr>
 			      <th scope="col">Pedido</th>
 			      <th scope="col">Usuario</th>
 			      <th scope="col">Estado</th>
 			    </tr>
 			  </thead>
 			  <tbody>
-			    
-			    
+
+
 			    {% for order in object_list %}
 			    <tr>
 			      <th scope="row">{{ forloop.counter }}</th>
@@ -44,7 +44,7 @@
 			      <td><a href="{% url 'checkout:order_listar' order.user %}">Ver Pedido</a></td>
 			    </tr>
 			      {% endfor %}
-			    
+
 			  </tbody>
 			</table>
 			</div>
@@ -73,13 +73,13 @@
         <h3 class="login">Pedidos Online</h3>
       </li>
       <li>
-        <img class="login-img" src= {% static "products/imagenes/map.png" %}>
+        <img class="login-img" id="ubicacion" src= {% static "products/imagenes/map.png" %}>
         <h3 class="login">Envíos a todo el país</h3>
       </li>
-      <li> 
+      <li>
         <img class="login-img" src= {% static "products/imagenes/candado.png" %}>
         <h3 class="login">Plataforma de pago seguro</h3>
-      </li>       
+      </li>
     </ul>
   </div>
 </footer>
